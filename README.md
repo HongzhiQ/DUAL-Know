@@ -1,5 +1,5 @@
 # DUAL-Know
-The code for the paper: DUAL-Know: A Description-Augmented and Uncertainty- Aware GraphRAG Framework
+This repository contains the code for the paper DUAL-Know: A Description-Augmented and Uncertainty-Aware GraphRAG Framework.
 
 ## Overview
 
