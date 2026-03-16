@@ -86,7 +86,9 @@ git clone https://github.com/<your-username>/dual_know.git
 cd dual_know
 
 # Install core dependencies
-pip install -r requirements.txt
+pip install torch==2.1.0 transformers==4.41.2 sentence-transformers==5.2.3 \
+    networkx numpy==1.26.4 faiss-cpu==1.13.2 scipy==1.14.1 scikit-learn==1.7.2 \
+    jieba==0.42.1 nltk==3.9.1 rouge-chinese==1.0.3 safetensors==0.4.5
 
 # (Optional) Install vLLM for inference acceleration
 pip install vllm
@@ -144,7 +146,31 @@ FAISS indexes and node embedding caches must be built before the first run (auto
 python run.py --mode build_index
 ```
 
-### 3. Single Inference
+### 3. Build Node Embedding Cache (Run Once)
+
+Pre-compute and cache all entity node embeddings offline, eliminating the need for real-time encoding during the DGHMA stage at inference time:
+
+```bash
+cd dual_know
+python utils/embedding_cache.py --build \
+    --entity_table  graphrag_export/processed_data_standard/entity_table.jsonl \
+    --bge_model     /path/to/bge-base-zh-v1.5 \
+    --cache_dir     outputs/node_emb_cache \
+    --batch_size    256
+```
+
+This takes approximately 1–3 minutes depending on the number of entities, and generates:
+
+```text
+outputs/node_emb_cache/
+  ├── node_embeddings.npy     # (N, 768) float32 matrix
+  ├── node_id_map.pkl         # Entity ID list
+  └── cache_meta.json         # Metadata
+```
+
+> **Note:** If the cache does not exist when the pipeline is initialized, it will be built automatically. Manual construction is recommended for large-scale knowledge graphs to avoid delays during the first inference run.
+
+### 4. Single Inference
 
 ```bash
 python run.py --mode single --question "麻醉前评估门诊的主要任务是什么？"
@@ -156,7 +182,7 @@ The result will be saved to:
 outputs/results/single_result.json
 ```
 
-### 4. Batch Inference
+### 5. Batch Inference
 
 ```bash
 python run.py --mode batch --dataset_name testQAFinal(or your data name)
@@ -169,7 +195,7 @@ The result file will be saved to:
 outputs/results/<dataset_name>_batch_results.jsonl
 ```
 
-### 5. Evaluation
+### 6. Evaluation
 
 ```bash
 python evaluate.py --result_path outputs/results/testQAFinal_batch_results.jsonl
