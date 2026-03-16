@@ -87,9 +87,7 @@ git clone https://github.com/<your-username>/dual_know.git
 cd dual_know
 
 # Install core dependencies
-pip install torch==2.1.0 transformers==4.41.2 sentence-transformers==5.2.3 \
-    networkx numpy==1.26.4 faiss-cpu==1.13.2 scipy==1.14.1 scikit-learn==1.7.2 \
-    jieba==0.42.1 nltk==3.9.1 rouge-chinese==1.0.3 safetensors==0.4.5
+pip install -r requirements.txt
 
 # (Optional) Install vLLM for inference acceleration
 pip install vllm
