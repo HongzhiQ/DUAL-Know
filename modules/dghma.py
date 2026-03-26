@@ -83,7 +83,7 @@ class DGHMALayer(nn.Module):
 
     def __init__(self, input_dim, hidden_dim, num_heads, type_list, relation_list, dropout=0.1):
         super().__init__()
-        assert hidden_dim % num_heads == 0,
+        assert hidden_dim % num_heads == 0
 
         self.hidden_dim = hidden_dim
         self.num_heads = num_heads
