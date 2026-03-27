@@ -267,6 +267,31 @@ LLM_BACKEND = "vllm_server"
 VLLM_SERVER_URL = "http://localhost:8000"
 ```
 
+
+
+
+## Alternative Path Ranking Strategies
+
+We provide three alternative path ranking strategies in addition to the default uncertainty-aware ranking:
+
+| Strategy | Command | Description |
+|---|---|---|
+| Uncertainty-Aware (default) | `--strategy gnn_rank` | DGHMA-based scoring |
+| LLM-as-a-Judge | `--strategy llm_rank` | LLM scores paths directly |
+| Ours → LLM Cascade | `--strategy gnn_then_llm` | Two-stage: ours first, LLM refines |
+| LLM → Ours Cascade | `--strategy llm_then_gnn` | Two-stage: LLM first, ours refines |
+
+### Usage
+```bash
+# Run with cascade mode (high-precision)
+python run_ablation_ranking.py --mode batch --dataset_name testQAFinal --strategy gnn_then_llm
+
+# Run all strategies for comparison
+python run_ablation_ranking.py --mode batch --dataset_name testQAFinal
+```
+
+
+
 ## Output Format
 
 Inference results are in JSON format with the following fields:
