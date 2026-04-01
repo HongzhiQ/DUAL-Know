@@ -7,43 +7,10 @@
 DUAL-Know is a knowledge graph-enhanced question answering system designed for the medical domain (primarily anesthesiology). The framework integrates the structured reasoning capabilities of knowledge graphs with the natural language generation capabilities of large language models, achieving high-quality medical question answering through dual-channel recall, graph attention networks, and multi-metric fusion strategies.
 
 
-## Project Structure
+<p align="center">
+  <img src="figs/framework.png" width="800" alt="DUAL-Know Framework">
+</p>
 
-```
-dual_know/
-├── run.py                  # Entry point (single/batch inference, index building)
-├── pipeline.py             # Inference pipeline main workflow
-├── train_dghma.py          # DGHMA model training script
-├── evaluate.py             # Evaluation script (BLEU-4/ROUGE/GLEU/Distinct)
-├── verify.py               # Environment and data verification tool
-├── configs/
-│   └── config.py           # Global configuration (paths, hyperparameters, device, etc.)
-├── modules/
-│   ├── query_augmentation.py    # Query rewriting + triple extraction
-│   ├── query_graph_builder.py   # Query subgraph construction and entity linking
-│   ├── semantic_recall.py       # Dual-channel semantic recall
-│   ├── dghma.py                 # DGHMA graph attention network
-│   ├── path_ranking.py          # Path ranking and structured input construction
-│   ├── answer_fusion.py         # Multi-metric fusion answer selection
-│   └── llm_inference.py         # LLM inference wrapper
-├── utils/
-│   ├── data_loader.py           # Data loading utilities
-│   ├── embedding.py             # Embedding encoder + FAISS index
-│   ├── embedding_cache.py       # Node embedding offline cache
-│   ├── llm_wrapper.py           # AnesGLM model wrapper (transformers)
-│   └── vllm_wrapper.py          # vLLM inference acceleration wrapper
-├── graphrag_export/
-│   └── processed_data_standard/ # KG data directory
-│       ├── entity_table.jsonl   # Entity table
-│       ├── kg_triples.jsonl     # Knowledge graph triples
-│       ├── kg_graph.pkl         # NetworkX graph (can be rebuilt from triples)
-│       └── alignment/           # Entity alignment mappings
-└── outputs/                     # Output directory
-    ├── index/                   # FAISS index cache
-    ├── node_emb_cache/          # Node embedding cache
-    ├── results/                 # Inference results
-    └── dghma_best.pt            # DGHMA best checkpoint
-```
 
 ## Requirements
 
