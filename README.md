@@ -14,6 +14,15 @@ DUAL-Know is a knowledge graph-enhanced question answering system designed for t
 </p>
 
 
+## 🔥 Update
+
+**2026.04.01**
+
+* 🚀 Our specialized anesthesiology large language model, **AnesGLM**, has been released on [Hugging Face](https://huggingface.co/QiHongzhi/AnesGLM)!
+* 📚 We have updated the `dataset` folder with the multiple-choice and single-choice questions used for model training and evaluation.*
+
+
+
 ## Requirements
 
 ### Mandatory
