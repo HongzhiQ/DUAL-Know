@@ -4,6 +4,7 @@
 
 ## Overview
 
+DUAL-Know is a GraphRAG framework designed to provide highly accurate and trustworthy question-answering for the high-stakes domain of clinical anesthesiology. It mitigates LLM hallucinations by integrating dual-channel semantic recall for precise retrieval, a Dynamically Gated Heterogeneous Multi-Head Attention (DGHMA) module for reliable graph reasoning, and a multi-metric fusion strategy for safe answer generation. 
 
 <p align="center">
   <img src="figs/framework.png" width="800" alt="DUAL-Know Framework">
@@ -17,7 +18,7 @@
 **2026.04.01**
 
 * 🚀 Our specialized anesthesiology large language model, **AnesGLM**, has been released on [Hugging Face](https://huggingface.co/QiHongzhi/AnesGLM)!
-* 📚 We have updated the `dataset` folder with the multiple-choice and single-choice questions used for model training and evaluation.*
+* 📚 We have updated the `dataset` folder with the multiple-choice and single-choice questions used for model training and evaluation.
 
 
 
