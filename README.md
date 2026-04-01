@@ -4,8 +4,6 @@
 
 ## Overview
 
-DUAL-Know is a knowledge graph-enhanced question answering system designed for the medical domain (primarily anesthesiology). The framework integrates the structured reasoning capabilities of knowledge graphs with the natural language generation capabilities of large language models, achieving high-quality medical question answering through dual-channel recall, graph attention networks, and multi-metric fusion strategies.
-
 
 <p align="center">
   <img src="figs/framework.png" width="800" alt="DUAL-Know Framework">
