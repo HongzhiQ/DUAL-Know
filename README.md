@@ -10,7 +10,7 @@ DUAL-Know is a knowledge graph-enhanced question answering system designed for t
 <p align="center">
   <img src="figs/framework.png" width="800" alt="DUAL-Know Framework">
   <br>
-  <em>Overview of the proposed Dual-Know Framework.</em>
+  <em>Figure 1. Overview of the proposed Dual-Know Framework.</em>
 </p>
 
 
