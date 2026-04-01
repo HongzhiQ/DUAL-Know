@@ -1,6 +1,6 @@
 # DUAL-Know
 
-**DUAL-Know: A Description-Augmented and Uncertainty-Aware GraphRAG Framework**
+**DUAL-Know: A Description-Augmented and Uncertainty-Aware GraphRAG Framework for Anesthesiology Question Answering**
 
 ## Overview
 
