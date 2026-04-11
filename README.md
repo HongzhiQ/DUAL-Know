@@ -15,6 +15,10 @@ DUAL-Know is a GraphRAG framework designed to provide highly accurate and trustw
 
 ## 🔥 Update
 
+
+**2026.04.10**
+* 📊 We have released a 100-question subset of the AnesClinQA test set for generative QA evaluation in the `dataset` folder.
+
 **2026.04.01**
 
 * 🚀 Our specialized anesthesiology large language model, **AnesGLM**, has been released on [Hugging Face](https://huggingface.co/QiHongzhi/AnesGLM)!
